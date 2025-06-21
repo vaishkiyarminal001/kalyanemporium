@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import "./About.css";
 
-import Video from "./Video";
-import About from "./About";
-import Service from "./Service";
-import Do from "./Do";
-import Best from "./Best";
-import Contact from "./Contact";
+
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,14 +9,19 @@ function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="navbar">
-      <div className="navbar-logo">Kalyan Emporium</div>
+
+    <div className="navbar">
+
+       <div className="navbar-logo">Kalyan Emporium</div>
 
       <div className={`navbar-links ${isOpen ? "open" : ""}`}>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/products">Products</a>
-        <a href="/contact">Contact</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Service</a>
+        <a href="#workers">Best</a>
+        <a href="#what-we-do">Do</a>
+        <a href="#contact">Contact</a>
+      
       </div>
 
       <div className={`hamburger ${isOpen ? "open" : ""}`} onClick={toggleMenu}>
@@ -31,14 +30,10 @@ function Navbar() {
         <span></span>
       </div>
 
-      <Video/>
-      <About/>
-      <Service/>
-      <Best/>
-      <Do/>
-      <Contact/>
-    </nav>
+  
 
+    </div>
+    
 
   );
 }
